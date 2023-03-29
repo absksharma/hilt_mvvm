@@ -24,5 +24,6 @@ class MainActivity : AppCompatActivity() {
         vm.list.observe(this) {
             Toast.makeText(this@MainActivity, it.message, Toast.LENGTH_SHORT).show()
         }
+
     }
 }

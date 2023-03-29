@@ -10,13 +10,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
 @HiltViewModel
-class MainViewModel @Inject constructor(private val repo: MainRepo) : ViewModel() {
+class FirstViewModel @Inject constructor(private val repo: MainRepo) : ViewModel() {
+
     private var _list = MutableLiveData<ImagesResponse>()
     val list: LiveData<ImagesResponse> = _list
 
     fun fetchDogs() = viewModelScope.launch() {
-
         val list = repo.getData().body()
         _list.value = list!!
     }
